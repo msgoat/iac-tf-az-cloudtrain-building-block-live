@@ -1,0 +1,4 @@
+resource_group_name  = "rg-euw-iactrain-dev-tfbblox2024-tfstate"
+storage_account_name = "stuxnz706x4ebzixnd3dafij"
+container_name       = "tfstate"
+

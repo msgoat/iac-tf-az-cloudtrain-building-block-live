@@ -1,0 +1,58 @@
+variable "region_name" {
+  description = "The name of the region to deploy into."
+  type        = string
+}
+
+variable "solution_name" {
+  description = "The name of the cloud solution that owns all cloud resources."
+  type        = string
+}
+
+variable "solution_stage" {
+  description = "The name of the current solution stage."
+  type        = string
+}
+
+variable "solution_fqn" {
+  description = "The fully qualified name of the cloud solution."
+  type        = string
+}
+
+variable "common_tags" {
+  description = "Common tags to be attached to all cloud resources"
+  type        = map(string)
+}
+
+variable "admin_principal_ids" {
+  description = "List of principal IDs (groups or roles) which grant administrative access components of this solution"
+  type        = list(string)
+}
+
+variable "tfstate_resource_group_name" {
+  description = "Name of the resource group owning the remote Terraform state."
+  type        = string
+}
+
+variable "tfstate_storage_account_name" {
+  description = "Name of the storage account containing the remote Terraform state."
+  type        = string
+}
+
+variable "tfstate_container_name" {
+  description = "Name of the storage container holding the remote Terraform state."
+  type        = string
+}
+
+variable "letsencrypt_account_name" {
+  description = "Lets Encrypt Account name to be used to request TLS certificates"
+  type        = string
+}
+
+variable "kubernetes_cluster_architecture" {
+  description = "Processor architecture of the worker nodes of the target Kubernetes cluster; allowed values are: `X86_64` (default), `ARM_64`"
+  type        = string
+  validation {
+    condition     = var.kubernetes_cluster_architecture == "X86_64" || var.kubernetes_cluster_architecture == "ARM_64"
+    error_message = "The kubernetes_cluster_architecture must be either `X86_64` (Intel-based 64 bit) or `ARM_64` (ARM-based 64 bit)"
+  }
+}
