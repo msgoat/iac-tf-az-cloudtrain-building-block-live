@@ -97,3 +97,9 @@ variable "tfstate_container_name" {
   description = "Name of the storage container holding the remote Terraform state."
   type        = string
 }
+
+variable "host_names" {
+  description = "Host names of all hosts whose traffic should be routed to this solution"
+  type        = list(string)
+  default     = []
+}

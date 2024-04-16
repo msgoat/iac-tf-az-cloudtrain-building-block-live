@@ -90,9 +90,12 @@ module "k8s_bootstrap" {
   k8s_cluster_id                  = data.terraform_remote_state.platform_foundation.outputs.k8s_cluster_id
   kubernetes_cluster_architecture = var.kubernetes_cluster_architecture
   letsencrypt_account_name        = var.letsencrypt_account_name
-  admin_principal_ids             = var.admin_principal_ids
   public_dns_zone_id              = data.terraform_remote_state.stage_shared.outputs.public_dns_zone_id
   key_vault_id                    = data.terraform_remote_state.stage_shared.outputs.key_vault_id
   loadbalancer_id                 = data.terraform_remote_state.platform_foundation.outputs.loadbalancer_id
   resource_group_id               = data.terraform_remote_state.stage_shared.outputs.resource_group_id
+  host_names                      = var.host_names
+  opentelemetry_enabled           = var.opentelemetry_enabled
+  opentelemetry_collector_host    = var.opentelemetry_collector_host
+  opentelemetry_collector_port    = var.opentelemetry_collector_port
 }

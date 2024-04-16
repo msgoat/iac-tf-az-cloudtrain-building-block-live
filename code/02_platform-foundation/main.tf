@@ -48,4 +48,5 @@ module "k8s_foundation" {
   key_vault_id                     = data.terraform_remote_state.stage_shared.outputs.key_vault_id
   admin_principal_ids              = var.admin_principal_ids
   public_dns_zone_id               = data.terraform_remote_state.stage_shared.outputs.public_dns_zone_id
+  host_names                       = var.host_names
 }
