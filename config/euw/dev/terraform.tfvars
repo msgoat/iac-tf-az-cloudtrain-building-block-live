@@ -54,4 +54,5 @@ opentelemetry_enabled = true
 opentelemetry_collector_host = "tracing-jaeger-collector.tracing"
 # Port number of the OpenTelemetry collector endpoint; required if `opentelemetry_enabled` is true
 opentelemetry_collector_port = 4317
+kubernetes_namespace_templates = [{ name = "cloudtrain" }]
 
